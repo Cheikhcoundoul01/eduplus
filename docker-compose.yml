@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: eduplus-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: eduplus_db
+      POSTGRES_USER: eduplus_user
+      POSTGRES_PASSWORD: eduplus_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - eduplus-pgdata:/var/lib/postgresql/data
+
+volumes:
+  eduplus-pgdata:
