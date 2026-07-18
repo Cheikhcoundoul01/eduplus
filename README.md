@@ -40,9 +40,8 @@ FILE_UPLOAD_DIR=./uploads
 
 ### 3. Lancer l'application
 
-```bash
-mvn spring-boot:run
-```
+Depuis IntelliJ : clique sur ▶️ à côté de `EduplusApplication`.
+
 
 L'API démarre sur `http://localhost:8080`.
 
