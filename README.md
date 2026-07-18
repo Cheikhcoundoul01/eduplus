@@ -13,25 +13,26 @@ Projet L3 IPD — Module PDWA-L3 — Spring Boot 3 / Java 17 / PostgreSQL / JWT
 
 ## Démarrage rapide
 
-### 1. Lancer PostgreSQL (Docker)
+### 1. Lancer PostgreSQL
 
-```bash
-docker compose up -d
-```
+Ce projet a été développé et testé avec **PostgreSQL installé en local** (via pgAdmin4).
 
-Cela démarre PostgreSQL sur `localhost:5432` avec :
-- DB : `eduplus_db`
-- User : `eduplus_user`
-- Password : `eduplus_pass`
+**Configuration avec PostgreSQL local (pgAdmin) :**
 
-### 2. Variables d'environnement (optionnel, valeurs par défaut déjà correctes pour Docker)
+1. Ouvre pgAdmin4, connecte-toi à ton serveur PostgreSQL (mot de passe défini à l'installation)
+2. Clic droit sur **Databases** → **Create** → **Database...** → nomme-la `eduplus_db` → Save
+3. Vérifie le port de ton serveur : clic droit sur le serveur → **Properties** → onglet **Connection** → note la valeur du champ **Port** (par défaut `5432`, mais peut être différent si plusieurs versions de PostgreSQL sont installées — par exemple `5433`)
+
+### 2. Configurer les variables d'environnement
+
+Le projet lit sa configuration via des variables d'environnement (voir `application.yml`). Adapte les valeurs ci-dessous à ta config PostgreSQL réelle :
 
 ```
 DB_HOST=localhost
-DB_PORT=5432
+DB_PORT=5433
 DB_NAME=eduplus_db
-DB_USER=eduplus_user
-DB_PASSWORD=eduplus_pass
+DB_USER=postgres
+DB_PASSWORD=Cheikh2001
 JWT_SECRET=un-secret-long-et-unique
 JWT_EXPIRATION_MS=86400000
 FILE_UPLOAD_DIR=./uploads
